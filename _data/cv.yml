@@ -1,0 +1,95 @@
+# CV content, rendered on /cv/. Publications live on /publications/ (_data/publications.yml).
+
+summary: >-
+  Audio AI researcher with a Ph.D. in visual-aware expressive speech synthesis, spanning
+  TTS, lip-synced TTS, voice conversion, accented speech, and multimodal learning, with
+  first-author ICASSP / INTERSPEECH publications. Recently led speech systems from research
+  to deployment, including real-time products shipped to enterprise customers.
+
+education:
+  - title: "Ph.D. in Electrical and Computer Engineering"
+    org: "National University of Singapore"
+    when: "2026"
+    detail: "GPA 4.50 / 5.00"
+    facts:
+      - "Thesis: Expressive Speech Synthesis — defended Feb 2026"
+      - "Supervisor: Prof. Haizhou Li, Human Language Technology Lab"
+  - title: "M.Sc. in Electrical and Computer Engineering"
+    org: "National University of Singapore"
+    when: "2020"
+    detail: "GPA 4.17 / 5.00"
+  - title: "B.Eng. in Electronic and Information Engineering"
+    org: "University of Electronic Science and Technology of China (UESTC)"
+    when: "2019"
+    detail: "GPA 3.83 / 4.00"
+
+experience:
+  - title: "Real-Time Singlish Voice Assistant"
+    org: "Built for an enterprise client"
+    when: "Jun 2026 – present"
+    facts:
+      - "Sole researcher and engineer"
+    detail: "End-to-end real-time voice assistant that replies in a natural Singaporean accent."
+    points:
+      - "Speech recognition: adapted a compact general-purpose ASR model to Singlish (heavy accent, code-switching, local particles); it beats a model 3x its size and comes close to the accuracy of a 10x larger model, while running 6x faster than real time."
+      - "Speech synthesis: prompt-based voice design with an authentic Singaporean accent, plus an automatic metric for Singlish accent (standard tools scored it wrong)."
+      - "Conversation system: designed the orchestrator to stream replies sentence by sentence, start replying before the user finishes (discarded if they keep talking), allow interruption, and ignore speech recognized with low confidence."
+  - title: "Real-Time Deepfake-Voice Detection for Microsoft Teams"
+    org: "Product shipped to an enterprise customer"
+    when: "May 2026 – present"
+    facts:
+      - "Sole researcher and engineer"
+    points:
+      - "Built a bot that joins live Microsoft Teams calls and flags, per speaker and in real time, whether a voice is an AI deepfake."
+      - "Showed that detectors trained on the standard benchmark miss modern AI voices on real Teams calls; adapted a detection model to real Teams audio."
+  - title: "Speaker-Adaptive Speech Anomaly Detection"
+    org: "Applied research project"
+    when: "Oct 2025 – present"
+    facts:
+      - "Sole researcher and engineer"
+    points:
+      - "Took on a largely unstudied speech anomaly detection problem, with no off-the-shelf solution and little in-depth prior research. Owned it from research to delivery."
+      - "Detects deviation from each speaker's own enrolled voice instead of using one global model, matching how the system is used in applications."
+      - "Delivered on-premise, running offline on the client's server."
+  - title: "Human Language Technology Lab"
+    org: "Department of Electrical and Computer Engineering, National University of Singapore"
+    when: "2020 – 2025"
+    points:
+      - "Research focus: visual-aware expressive speech synthesis. Formulated Automatic Voice Over as a new multimodal speech synthesis task; built systems from lip-motion timing alignment to facial-expression prosody alignment."
+      - "Worked on naturalness, synchronization, and expressiveness, plus voice conversion, multimodal learning, and singing voice synthesis."
+  - title: "Visiting Researcher, Center for Robust Speech Systems"
+    org: "University of Texas at Dallas"
+    when: "Oct 2022 – Mar 2023"
+    facts:
+      - "Hosts: Prof. John H. L. Hansen and Prof. Berrak Sisman"
+    points:
+      - "Studied self-supervised speech representations for speech synthesis; built a discrete-unit multimodal TTS system for accurate audio-visual alignment in Automatic Voice Over."
+      - "Collaborated on emotional speech synthesis and speech evaluation research."
+
+skills:
+  - label: "Speech & audio AI"
+    items: [TTS, Voice conversion, Accent conversion, Multimodal speech synthesis, Affective computing]
+  - label: "Real-time voice systems"
+    items: [Conversational voice assistants, Real-time ASR/TTS integration, Latency and interruption handling]
+  - label: "Implementation"
+    items: [Python/PyTorch model training, Speech data processing, Experiment design, Speech model evaluation, Multi-agent AI development workflows]
+  - label: "Languages"
+    items: [Chinese (native), English (professional)]
+
+teaching:
+  - title: "EE2211 — Introduction to Machine Learning"
+    org: "Teaching Assistant, National University of Singapore"
+    when: "Aug 2021 – May 2022"
+  - title: "EE3801 — Data Engineering Principles"
+    org: "Teaching Assistant, National University of Singapore"
+    when: "Aug 2021 – Dec 2021"
+
+awards:
+  - title: "Reviewer, IEEE Transactions on Affective Computing"
+    when: "2024 – present"
+  - title: "NUS Research Scholarship"
+    when: "2020"
+  - title: "China Scholarship Council Scholarship"
+    when: "2017"
+  - title: "IEEEXtreme Programming Competition 10.0 — World Rank 28 / 2114"
+    when: "2016"

@@ -1,0 +1,39 @@
+---
+layout: default
+title: "Contact"
+permalink: /contact/
+excerpt: "How to reach Junchen Lu."
+redirect_from:
+  - /contact
+---
+
+{% include base_path %}
+
+<header class="pagehead">
+  <p class="eyebrow">Contact</p>
+  <h1 class="pagehead__title">Say <em>hello</em>.</h1>
+  <a class="bigmail" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+</header>
+
+<section class="cvrow">
+  <h2 class="cvrow__label"><span>01</span> Address</h2>
+  <div class="cvrow__body">
+    <address class="address">
+      Human Language Technology (HLT) Laboratory<br>
+      Department of Electrical and Computer Engineering<br>
+      College of Design and Engineering<br>
+      National University of Singapore<br>
+      <br>
+      4 Engineering Drive 3<br>
+      Block E4, #06-20<br>
+      Singapore 117583
+    </address>
+  </div>
+</section>
+
+<section class="cvrow">
+  <h2 class="cvrow__label"><span>02</span> Elsewhere</h2>
+  <div class="cvrow__body">
+    {% include ed-links.html %}
+  </div>
+</section>

@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Publications"
+permalink: /publications/
+excerpt: "Publications by Junchen Lu on expressive and multimodal speech synthesis."
+---
+
+{% include base_path %}
+
+<section class="section">
+  <h1 class="sr-only">Publications</h1>
+  <ol class="pubs">
+    {% for pub in site.data.publications %}
+      {% include ed-pub.html pub=pub %}
+    {% endfor %}
+  </ol>
+</section>

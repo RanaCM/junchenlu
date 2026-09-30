@@ -1,0 +1,9 @@
+{% assign author = site.author %}
+<ul class="links">
+  {% if author.email %}<li><a href="mailto:{{ author.email }}">Email</a></li>{% endif %}
+  {% if author.googlescholar %}<li><a href="{{ author.googlescholar }}">Google Scholar</a></li>{% endif %}
+  {% if author.github %}<li><a href="https://github.com/{{ author.github }}">GitHub</a></li>{% endif %}
+  {% if author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ author.linkedin }}">LinkedIn</a></li>{% endif %}
+  {% if author.orcid %}<li><a href="{{ author.orcid }}">ORCID</a></li>{% endif %}
+  {% if author.researchgate %}<li><a href="{{ author.researchgate }}">ResearchGate</a></li>{% endif %}
+</ul>

@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+{% include base_path %}
+{% assign pubs = site.data.publications %}
+{% assign selected = pubs | where: "selected", true %}
+
+<section class="hero">
+  <div class="hero__text">
+    <p class="eyebrow">{{ page.eyebrow }}</p>
+    <h1 class="display">{{ site.author.name | replace: " ", "<br>" }}</h1>
+    {% if page.tagline %}<p class="display-sub"><em>{{ page.tagline }}</em></p>{% endif %}
+    <p class="hero__intro">{{ page.intro }}</p>
+    {% include ed-links.html %}
+  </div>
+  <figure class="plate">
+    <picture>
+      <source media="(min-width: 861px)" srcset="{{ base_path }}/images/junchen-halftone-wide.png">
+      <img src="{{ base_path }}/images/junchen-halftone.png" alt="Halftone portrait of {{ site.author.name }}" width="1000" height="1000">
+    </picture>
+  </figure>
+</section>
+
+<section class="band band--ink letter" aria-labelledby="research-label">
+  <p class="eyebrow" id="research-label">Research</p>
+  <div class="letter__body">
+    {{ content }}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="selected-title">
+  <div class="section__head">
+    <h2 class="heading-lg" id="selected-title">Selected <em>papers</em></h2>
+    <a class="more" href="{{ base_path }}/publications/">All {{ pubs.size }} publications →</a>
+  </div>
+  <ol class="pubs">
+    {% for pub in selected %}
+      {% include ed-pub.html pub=pub %}
+    {% endfor %}
+  </ol>
+</section>
+
+{% if page.band %}{% include band/{{ page.band }}.html %}{% endif %}
+
+<section class="section cta" aria-labelledby="cta-title">
+  <p class="eyebrow">Contact</p>
+  <h2 class="heading-lg" id="cta-title">Say <em>hello</em>.</h2>
+  <a class="bigmail" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+</section>

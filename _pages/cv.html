@@ -1,0 +1,86 @@
+---
+layout: default
+title: "About"
+permalink: /cv/
+excerpt: "Education, experience, skills, teaching and awards of Junchen Lu."
+redirect_from:
+  - /resume
+  - /about/
+  - /about.html
+---
+
+{% include base_path %}
+{% assign cv = site.data.cv %}
+
+<header class="pagehead">
+  <p class="eyebrow">Curriculum vitae</p>
+  <h1 class="pagehead__title">About <em>me</em></h1>
+  <p class="pagehead__lede">{{ cv.summary }}</p>
+</header>
+
+<section class="cvrow">
+  <h2 class="cvrow__label"><span>01</span> Education</h2>
+  <div class="cvrow__body">
+    {% for e in cv.education %}
+    <div class="item">
+      <p class="item__when">{{ e.when }}</p>
+      <h3 class="item__title">{{ e.title }}</h3>
+      <p class="item__org">{{ e.org }} — {{ e.detail }}</p>
+      {% if e.facts %}<p class="item__facts">{{ e.facts | join: " — " }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cvrow">
+  <h2 class="cvrow__label"><span>02</span> Research &amp; applied experience</h2>
+  <div class="cvrow__body">
+    {% for e in cv.experience %}
+    <div class="item">
+      <p class="item__when">{{ e.when }}</p>
+      <h3 class="item__title">{{ e.title }}</h3>
+      <p class="item__org">{{ e.org }}</p>
+      {% if e.facts %}<p class="item__facts">{{ e.facts | join: " — " }}</p>{% endif %}
+      {% if e.detail %}<p class="item__detail">{{ e.detail }}</p>{% endif %}
+      {% if e.points %}<ul class="item__points">{% for pt in e.points %}<li>{{ pt }}</li>{% endfor %}</ul>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cvrow">
+  <h2 class="cvrow__label"><span>03</span> Skills</h2>
+  <div class="cvrow__body">
+    {% for s in cv.skills %}
+    <div class="item">
+      <p class="item__when">{{ s.label }}</p>
+      <ul class="chips">{% for i in s.items %}<li class="tag">{{ i }}</li>{% endfor %}</ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cvrow">
+  <h2 class="cvrow__label"><span>04</span> Teaching</h2>
+  <div class="cvrow__body">
+    {% for e in cv.teaching %}
+    <div class="item">
+      <p class="item__when">{{ e.when }}</p>
+      <h3 class="item__title">{{ e.title }}</h3>
+      <p class="item__org">{{ e.org }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cvrow">
+  <h2 class="cvrow__label"><span>05</span> Awards &amp; service</h2>
+  <div class="cvrow__body">
+    {% for e in cv.awards %}
+    <div class="item">
+      <p class="item__when">{{ e.when }}</p>
+      <h3 class="item__title">{{ e.title }}</h3>
+    </div>
+    {% endfor %}
+  </div>
+</section>

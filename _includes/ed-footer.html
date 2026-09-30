@@ -1,0 +1,17 @@
+{% include base_path %}
+<footer class="footer">
+  <p class="footer__coords">
+    <span>1°17′55″ N</span>
+    <span aria-hidden="true">—</span>
+    <span>103°46′20″ E</span>
+    <span aria-hidden="true">—</span>
+    <span>Block E4, NUS, Singapore</span>
+  </p>
+  <p class="footer__meta">
+    <span>&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}</span>
+    <span aria-hidden="true">—</span>
+    <a href="{{ base_path }}/sitemap/">Sitemap</a>
+    <span aria-hidden="true">—</span>
+    <a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}">Feed</a>
+  </p>
+</footer>

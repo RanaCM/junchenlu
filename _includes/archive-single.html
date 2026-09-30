@@ -1,0 +1,30 @@
+{% include base_path %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<article class="entry" itemscope itemtype="http://schema.org/CreativeWork">
+  <p class="entry__meta">
+    {% if post.collection == 'teaching' %}
+      {{ post.type }} — {{ post.venue }} — {{ post.date | default: "1900-01-01" | date: "%Y" }}
+    {% elsif post.collection == 'publications' or post.collection == 'talks' %}
+      {{ post.venue }} — {{ post.date | default: "1900-01-01" | date: "%Y" }}
+    {% elsif post.date %}
+      <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %-d, %Y" }}</time>
+    {% endif %}
+  </p>
+  <h2 class="entry__title" itemprop="headline">
+    <a href="{% if post.link %}{{ post.link }}{% else %}{{ base_path }}{{ post.url }}{% endif %}" rel="permalink">{{ title }}</a>
+  </h2>
+  {% if post.excerpt %}
+    <div class="entry__excerpt" itemprop="description">{{ post.excerpt | markdownify }}</div>
+  {% endif %}
+  {% if post.citation %}
+    <p class="entry__cite">Recommended citation: {{ post.citation }}{% if post.paperurl %} <a href="{{ post.paperurl }}">{{ post.paperurl }}</a>{% endif %}</p>
+  {% elsif post.paperurl %}
+    <p class="entry__cite"><a class="tag" href="{{ post.paperurl }}">Download ↗</a></p>
+  {% endif %}
+</article>

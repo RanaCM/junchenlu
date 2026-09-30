@@ -1,0 +1,14 @@
+{% assign pub = include.pub %}
+<li class="pub">
+  <p class="pub__venue">{{ pub.venue }}{% if pub.note %} <span class="pub__note">— {{ pub.note }}</span>{% endif %}</p>
+  <h3 class="pub__title">{% if pub.paper %}<a href="{{ pub.paper }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
+  <p class="pub__authors">{% for a in pub.authors %}{% if a == site.author.name %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+  {% if pub.summary and include.summary != "no" %}<p class="pub__summary">{{ pub.summary }}</p>{% endif %}
+  {% if pub.code or pub.paper or pub.demo %}
+  <p class="pub__links">
+    {% if pub.paper %}<a class="tag" href="{{ pub.paper }}">Paper ↗</a>{% endif %}
+    {% if pub.demo %}<a class="tag" href="{{ pub.demo }}">Demo ↗</a>{% endif %}
+    {% if pub.code %}<a class="tag" href="{{ pub.code }}">Code ↗</a>{% endif %}
+  </p>
+  {% endif %}
+</li>

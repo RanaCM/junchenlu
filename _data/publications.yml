@@ -1,0 +1,71 @@
+# Publications, rendered on the home page and /publications/.
+# Order here is the display order on /publications/ (keep newest first).
+# Fields:
+#   authors  - list; the site author's name is set in bold automatically
+#   title    - paper title
+#   venue    - conference / journal
+#   year     - used for grouping and sorting
+#   note     - optional extra text after the venue (e.g. "under review")
+#   code     - optional URL to code
+#   paper    - optional URL to the paper
+#   demo     - optional URL to an audio demo page
+#   summary  - optional one- or two-sentence description
+#   selected - true to feature on the home page
+
+- title: "Objective Evaluation of Prosody and Intelligibility in Speech Synthesis via Conditional Prediction of Discrete Tokens"
+  authors: [Ismail Rasim Ulgen, Zongyang Du, Junchen Lu, Philipp Koehn, Berrak Sisman]
+  venue: "IEEE Open Journal of Signal Processing 2026"
+  note: "Presented at ICASSP 2026"
+  year: 2026
+
+- title: "PerformSinger: Multimodal Singing Voice Synthesis Leveraging Synchronized Lip Cues"
+  authors: [Ke Gu, Zhicong Wu, Peng Bai, Sitong Qiao, Zhiqi Jiang, Junchen Lu, Xiaodong Shi, Xinyuan Qian]
+  venue: "ICASSP 2026"
+  year: 2026
+
+- title: "Cross-Modal Contrastive Learning for Visual-Aware Prosody Modeling in Automatic Voice Over"
+  authors: [Junchen Lu, Berrak Sisman, Haizhou Li]
+  venue: "IEEE Journal"
+  note: "Under review (2026)"
+  year: 2026
+  summary: "Contrastive learning on unlabeled audio-visual data learns visual features that link facial expression to speech prosody."
+
+- title: "EmotionRankCLAP: Bridging Natural Language Speaking Styles and Ordinal Speech Emotion via Rank-N-Contrast"
+  authors: [Shreeram Suresh Chandra, Lucas Goncalves, Junchen Lu, Carlos Busso, Berrak Sisman]
+  venue: "INTERSPEECH 2025"
+  year: 2025
+
+- title: "Style Mixture of Experts for Expressive Text-to-Speech Synthesis"
+  authors: [Ahad Jawaid, Shreeram Suresh Chandra, Junchen Lu, Berrak Sisman]
+  venue: "NeurIPS 2024 Workshop (Audio Imagination)"
+  year: 2024
+
+- title: "Converting Anyone's Voice: End-to-End Expressive Voice Conversion with a Conditional Diffusion Model"
+  authors: [Zongyang Du, Junchen Lu, Kun Zhou, Berrak Sisman]
+  venue: "Odyssey 2024"
+  year: 2024
+
+- title: "High-Quality Automatic Voice Over with Accurate Alignment: Supervision through Self-Supervised Discrete Speech Units"
+  authors: [Junchen Lu, Berrak Sisman, Mingyang Zhang, Haizhou Li]
+  venue: "INTERSPEECH 2023"
+  year: 2023
+  code: "https://github.com/RanaCM/DSU-AVO"
+  selected: true
+  demo: "https://ranacm.github.io/DSU-AVO/"
+  summary: "Predicted self-supervised discrete units instead of acoustic features, giving direct supervision for text-video alignment; improved speech quality and lip-speech sync over prior baselines."
+
+- title: "VisualTTS: TTS with Accurate Lip-Speech Synchronization for Automatic Voice Over"
+  authors: [Junchen Lu, Berrak Sisman, Rui Liu, Mingyang Zhang, Haizhou Li]
+  venue: "ICASSP 2022"
+  year: 2022
+  selected: true
+  demo: "https://ranacm.github.io/VisualTTS-Samples/"
+  summary: "First in-depth study of lip-synced TTS: textual-visual attention and visual fusion condition speech on lip motion, for video dubbing."
+
+- title: "VAW-GAN for Singing Voice Conversion with Non-Parallel Training Data"
+  authors: [Junchen Lu, Kun Zhou, Berrak Sisman, Haizhou Li]
+  venue: "APSIPA ASC 2020"
+  year: 2020
+  code: "https://github.com/RanaCM/Singing-Voice-Conversion-with-Conditional-VAW-GAN"
+  selected: true
+  summary: "Disentangled singer identity and F0 contour from phonetic content with a VAW-GAN encoder-decoder, enabling singing voice conversion trained on non-parallel data."

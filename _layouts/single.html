@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+<article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+  <header class="pagehead">
+    {% if page.collection == 'teaching' %}
+      <p class="eyebrow">{{ page.type }} — {{ page.venue }} — {{ page.date | date: "%Y" }}</p>
+    {% elsif page.venue and page.date %}
+      <p class="eyebrow">{{ page.venue }} — {{ page.date | date: "%Y" }}</p>
+    {% elsif page.date %}
+      <p class="eyebrow"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.read_time %} — {% include read-time.html %}{% endif %}</p>
+    {% endif %}
+    {% if page.title %}<h1 class="pagehead__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+  </header>
+
+  <div class="prose" itemprop="text">
+    {{ content }}
+
+    {% if page.citation %}
+      <p class="meta">Recommended citation: {{ page.citation }}{% if page.paperurl %} <a href="{{ page.paperurl }}">{{ page.paperurl }}</a>{% endif %}</p>
+    {% endif %}
+    {% if page.link %}<p><a class="tag" href="{{ page.link }}">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }} ↗</a></p>{% endif %}
+  </div>
+
+  {% include post_pagination.html %}
+</article>

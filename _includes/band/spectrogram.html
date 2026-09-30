@@ -1,0 +1,8 @@
+{% assign spec = page.spectrogram | default: "stardust" %}
+<section class="band band--ink spec" aria-label="Abstract spectrogram">
+  {% if spec == "haze" %}
+    <div class="spec-haze" role="img" aria-label="Abstract spectrogram of a spoken phrase"></div>
+  {% else %}
+    {% include band/spec-{{ spec }}.svg %}
+  {% endif %}
+</section>
